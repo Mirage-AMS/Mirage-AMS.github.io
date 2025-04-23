@@ -1,3 +1,21 @@
+# 站点配置
+# 浏览器图标
+favicon: /images/favicon.png
+# 主页头像
+avatar:
+  img: /images/favicon.png
+  effect: false #头像会一直转圈
+
+title: Mirage
+subtitle: ''
+description: ''
+keywords:
+author: Mirage@AMS
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+
+
 # 代码块配置
 highlight_theme: mac  #  darker / pale night / light / ocean / mac / mac light / false 代码主题
 highlight_copy: true # 复制按钮
