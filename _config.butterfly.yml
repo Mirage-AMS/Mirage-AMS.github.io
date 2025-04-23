@@ -1,0 +1,29 @@
+# 代码块配置
+highlight_theme: mac  #  darker / pale night / light / ocean / mac / mac light / false 代码主题
+highlight_copy: true # 复制按钮
+highlight_lang: false # 是否显示代码语言
+highlight_shrink: false # true: 代码块默认不展开 / false: 代码块默认展开 | none: 展开并隐藏折叠按钮
+highlight_height_limit: false # unit: px
+code_word_wrap: true #代码自动换行，关闭滚动条
+
+# 本地搜索配置
+local_search:
+  enable: true
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}" # 如果没有查到内容相关内容显示
+
+## 文章链接配置
+abbrlink:
+  alg: crc32      #support crc16(default) and crc32 进制
+  rep: hex        #support dec(default) and hex  算法
+  drafts: false   #(true)Process draft,(false)Do not process draft. false(default)
+  ## Generate categories from directory-tree
+  ## depth: the max_depth of directory-tree you want to generate, should > 0
+  auto_category:
+     enable: true  #true(default)
+     depth:        #3(default)
+     over_write: false
+  auto_title: false #enable auto title, it can auto fill the title by path
+  auto_date: false #enable auto date, it can auto fill the date by time today
+  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink.
