@@ -14,7 +14,36 @@ author: Mirage@AMS
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
+# 侧边栏
+social:
+   fab fa-github: https://github.com/mirage-ams || Github
+   # fab fa-qq:  tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=728831102&website=www.oicqzone.com || QQ
+   fas fa-envelope-open-text: mailto:294424260@qq.com || Email
 
+# 公告栏
+card_announcement:
+    enable: true
+    content: Welcome to my blogs  # 修改公告栏信息
+
+# 菜单配置
+menu:
+  主页: / || fas fa-home
+  文章 || fa fa-graduation-cap:
+    分类: /categories/ || fa fa-archive
+    标签: /tags/ || fa fa-tags
+    归档: /archives/ || fa fa-folder-open
+  友链: /links/ || fa fa-link
+  留言板: /comment/ || fa fa-paper-plane
+  关于: /about/ || fas fa-heart
+
+# toc (目录)
+toc:
+  post: true
+  page: false
+  number: false
+  expand: true # 是否展开
+  style_simple: false # for post
+  scroll_percent: true
 
 # 代码块配置
 highlight_theme: mac  #  darker / pale night / light / ocean / mac / mac light / false 代码主题
@@ -31,7 +60,30 @@ local_search:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}" # 如果没有查到内容相关内容显示
 
-## 文章链接配置
+# 注入样式
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom-categories.css">
+  bottom:
+    -
+
+# A simple 404 page
+error_404:
+  enable: true
+  subtitle: "页面沒有找到"
+  background:
+
+footer:
+  owner:
+    enable: true   # 是否开启
+    since: 2025    # 站点开始时间
+    custom_text:   # 自定义文本支持HTML
+    copyright: true # Copyright of theme and framework
+
+
+# ======================================================================================================================
+
+# 文章链接配置
 abbrlink:
   alg: crc32      #support crc16(default) and crc32 进制
   rep: hex        #support dec(default) and hex  算法
@@ -45,3 +97,25 @@ abbrlink:
   auto_title: false #enable auto title, it can auto fill the title by path
   auto_date: false #enable auto date, it can auto fill the date by time today
   force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink.
+
+# hexo-butterfly-categories-card
+# see https://akilar.top/posts/a9131002/
+categoryBar:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: / # 应用页面
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 1
+  column: odd # odd：3列 | even：4列
+  row: 2 #显示行数，默认两行，超过行数切换为滚动显示
+  message:
+    - descr: 传奇之路
+      cover: https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp
+    - descr: 其他桌游
+      cover: https://npm.elemecdn.com/akilar-candyassets/image/cover2.webp
+    - descr: 技术分享
+      cover: https://npm.elemecdn.com/akilar-candyassets/image/cover3.webp
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
+
